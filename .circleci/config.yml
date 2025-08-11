@@ -9,12 +9,11 @@ jobs:
         - run:
             name: Install dependencies
             command: |
-              cd Automation
               npm install
         - run:
             name: Run Nightwatch test
             command: |
-              cd Automation
+              
               npx nightwatch tests/homepageTest.js
         - store_artifacts:
             path: Automation/tests_output
