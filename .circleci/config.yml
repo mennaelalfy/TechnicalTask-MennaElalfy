@@ -2,15 +2,25 @@ version: 2.1
 
 jobs:
   UI-Test-homepage:
-    docker:
-      - image: cimg/node:lts-browsers
-    steps:
-      - checkout:
-            path: ~/Automation
-     
-      - run: npx nightwatch tests/homepageTest.js
-      - store_artifacts:
-            path: tests_output/
+  docker:
+    - image: cimg/node:lts-browsers
+  steps:
+    - checkout:
+        path: ~/Automation
+    - run:
+        name: Install dependencies
+        command: |
+          cd ~/Automation
+          npm install
+    - run:
+        name: Run Nightwatch test
+        command: |
+          cd ~/Automation
+          npx nightwatch tests/homepageTest.js
+    - store_artifacts:
+        path: ~/Automation/tests_output/
+
+
 
   api-tests:
     docker:
