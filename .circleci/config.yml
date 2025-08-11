@@ -1,0 +1,28 @@
+version: 2.1
+
+jobs:
+  UI-Test-homepage:
+    docker:
+      - image: cimg/node:lts-browsers
+    steps:
+      - checkout:
+            path: ~/Automation
+     
+      - run: cd tests/ui && npx nightwatch myUITest.js
+      - store_artifacts:
+            path: tests_output/
+
+  api-tests:
+    docker:
+      - image: cimg/node:v22.18.0
+    steps:
+      - checkout
+      - run: npm install
+      - run: npx mocha mock-user-auth/test/UserAPIs.test.js --reporter mochawesome
+
+workflows:
+  version: 2
+  run-tests:
+    jobs:
+      - UI-Test-homepage
+      
