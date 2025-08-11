@@ -5,20 +5,19 @@ jobs:
   docker:
     - image: cimg/node:lts-browsers
   steps:
-    - checkout:
-        path: ~/Automation
+    - checkout
     - run:
         name: Install dependencies
         command: |
-          cd ~/Automation
+          cd Automation
           npm install
     - run:
         name: Run Nightwatch test
         command: |
-          cd ~/Automation
+          cd Automation
           npx nightwatch tests/homepageTest.js
     - store_artifacts:
-        path: ~/Automation/tests_output/
+        path: Automation/tests_output
 
 
 
