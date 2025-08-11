@@ -6,13 +6,15 @@ jobs:
       - image: cimg/node:lts-browsers
     steps:
       - checkout
+      - browser-tools/install-chrome
+      - node/install-packages 
       - run:
           name: Install dependencies
           command: |
             npm ci
             
-      - browser-tools/install-chrome
-      - node/install-packages 
+      
+      
       - run:
           name: Fix permissions
           command: chmod +x ./node_modules/.bin/nightwatch
