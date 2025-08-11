@@ -15,6 +15,7 @@ module.exports={
 	browser.assert.urlEquals('http://s3-design-sample-site.s3-website-us-west-2.amazonaws.com/');
 		  
 	//Validate on element logo from the homepage page object to be visible
+	homePage.waitForElementVisible('@logo', 5000);
 	homePage.expect.element('@logo').to.be.visible;
 	
 	//Validate on element navhome from the homepage page object to be visible
