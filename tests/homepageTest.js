@@ -8,35 +8,36 @@ module.exports={
 	//Store homepage object in variable
     const homePage = browser.page.homepage();
 		  
-	//Open the URL in the page object
-	homePage.navigate();
+	//Open the URL in the page object and Validate on page loaded
+	homePage.navigate().waitForElementVisible('@HLnavhome', 5000).expect.element('@HLnavhome').to.be.visible;
 		  
 	// Validate the page URL
 	browser.assert.urlEquals('http://s3-design-sample-site.s3-website-us-west-2.amazonaws.com/');
-		  
-	//Validate on element logo from the homepage page object to be visible
-	homePage.waitForElementVisible('@logo', 5000);
-	homePage.expect.element('@logo').to.be.visible;
 	
-	//Validate on element navhome from the homepage page object to be visible
-	homePage.expect.element('@navhome').to.be.visible;
+
 		  
 	//Navigate to contact tab 
 	homePage.waitForElementVisible('@navcontact', 3000).click('@navcontact');
 		  
-	// Validate on element contactText that identify navigating to contact navigation page
-	homePage.expect.element('@contactText').to.be.visible;
-	homePage.expect.element('@contactText').text.to.equal('CONTACT ACME CHEMICALS');	
-
+	// Validate on element conatct navigation page name only highlighted 
+	
+	homePage.waitForElementVisible('@HLnavcontact', 5000).expect.element('@HLnavcontact').to.be.visible;
+	
+	homePage.waitForElementVisible('@navhome', 5000).expect.element('@navhome').to.be.visible;
+	homePage.waitForElementVisible('@navcompany', 5000).expect.element('@navcompany').to.be.visible;
+	homePage.waitForElementVisible('@navproducts', 5000).expect.element('@navproducts').to.be.visible;
+	
+	
 	//Click back
 	browser.back();
 	
-	//Assert user at home page
-	// Validate the page URL
-	browser.assert.urlEquals(homePage.url);
-		  
-	//Validate on element logo from the homepage page object to be visible
-	homePage.expect.element('@logo').to.be.visible;
+	//Assert user at home page, image home only highlighted
+	
+	homePage.waitForElementVisible('@HLnavhome', 5000).expect.element('@HLnavhome').to.be.visible;
+	
+	homePage.waitForElementVisible('@navcompany', 5000).expect.element('@navcompany').to.be.visible;
+	homePage.waitForElementVisible('@navproducts', 5000).expect.element('@navproducts').to.be.visible;
+	homePage.waitForElementVisible('@navcontact', 5000).expect.element('@navcontact').to.be.visible;
 	
 	
 	//End the test
