@@ -1,23 +1,23 @@
 version: 2.1
 
 jobs:
-    UI-Test-homepage:
-      docker:
-        - image: cimg/node:lts-browsers
-      steps:
-        - checkout
-        - run:
-            name: Install dependencies
-            command: |
-              npm ci
-        - run:
-            name: Fix permissions
-            command: chmod +x ./node_modules/.bin/nightwatch
-        - run:
-            name: Run Nightwatch test
-            command: npx nightwatch tests/homepageTest.js
-        - store_artifacts:
-            path: tests_output
+  UI-Test-homepage:
+    docker:
+      - image: cimg/node:lts-browsers
+    steps:
+      - checkout
+      - run:
+          name: Install dependencies
+          command: |
+            npm ci
+      - run:
+          name: Fix permissions
+          command: chmod +x ./node_modules/.bin/nightwatch
+      - run:
+          name: Run Nightwatch test
+          command: npx nightwatch tests/homepageTest.js
+      - store_artifacts:
+          path: tests_output
 
 
 
