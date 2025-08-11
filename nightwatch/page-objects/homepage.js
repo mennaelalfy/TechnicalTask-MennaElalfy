@@ -13,14 +13,37 @@ module.exports = {
 
     // The home navigation image element, selected by its src attribute
     navhome: {
-      selector: 'img[src="images/nav/home1g.gif"]'
+      selector: 'img[src="images/nav/home1.gif"]'
     },
 	navcontact: {
-      selector: 'a[href="contact.html"]' 
+      selector: 'img[src="images/nav/contact1.gif"]' 
+	  
+    },
+	navcompany: {
+      selector: 'img[src="images/nav/company1.gif"]' 
+	  
+    },
+	navproducts: {
+      selector: 'img[src="images/nav/products1.gif"]' 
+	  
+    },
+	 HLnavhome: {
+     selector: 'img[src="images/nav/home1g.gif"]'
+    },
+	HLnavcontact: {
+    selector: 'img[src="images/nav/contact1g.gif"]' 
+	  
+    },
+	HLnavcompany: {
+    selector: 'img[src="images/nav/company1g.gif"]' 
+	  
+    },
+	HLnavproducts: {
+     selector: 'img[src="images/nav/products1g.gif"]' 
 	  
     },
 	contactText: {
-      selector: 'td.style2 p'
+      selector: 'img[src="images/nav/home1.gif"]'
     }
   }
 };
