@@ -43,7 +43,27 @@ jobs:
           name: Run Nightwatch test
           command: npx nightwatch tests/LinkedInHomeTest.js
       - store_artifacts:
-          path: tests_output        
+          path: tests_output
+
+  UI-Test-StoreSearch:
+    docker:
+      - image: cimg/node:lts-browsers
+    steps:
+      - checkout
+      - browser-tools/install-chrome
+      - node/install-packages 
+      - run:
+          name: Install dependencies
+          command: |
+            npm ci     
+      - run:
+          name: Fix permissions
+          command: chmod +x ./node_modules/.bin/nightwatch
+      - run:
+          name: Run Nightwatch test
+          command: npx nightwatch tests/SearchTest.js
+      - store_artifacts:
+          path: tests_output          
 
 
 
@@ -62,4 +82,5 @@ workflows:
     jobs:
       - UI-Test-homepage
       - UI-Test-LinkedInHome
+      - UI-Test-StoreSearch
       
