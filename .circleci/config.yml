@@ -21,7 +21,7 @@ jobs:
           command: chmod +x ./node_modules/.bin/nightwatch
       - run:
           name: Run Nightwatch test
-          command: npx nightwatch tests/homepageTest.js
+          command: npx nightwatch UI-tests/homepageTest.js
       - store_artifacts:
           path: tests_output
           
@@ -41,7 +41,7 @@ jobs:
           command: chmod +x ./node_modules/.bin/nightwatch
       - run:
           name: Run Nightwatch test
-          command: npx nightwatch tests/LinkedInHomeTest.js
+          command: npx nightwatch UI-tests/LinkedInHomeTest.js
       - store_artifacts:
           path: tests_output
 
@@ -61,7 +61,7 @@ jobs:
           command: chmod +x ./node_modules/.bin/nightwatch
       - run:
           name: Run Nightwatch test
-          command: npx nightwatch tests/SearchTest.js
+          command: npx nightwatch UI-tests/SearchTest.js
       - store_artifacts:
           path: tests_output          
 
@@ -93,6 +93,9 @@ workflows:
   run-tests:
     jobs:
       
+      - UI-Test-homepage
+      - UI-Test-StoreSearch
+      - UI-Test-LinkedInHome
       - API-Tests
       
       
