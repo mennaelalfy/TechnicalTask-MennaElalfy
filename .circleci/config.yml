@@ -67,7 +67,7 @@ jobs:
 
   API-Tests:
     docker:
-      - image: cimg/node:v22.18.0
+      - image: cimg/node:22.18
     steps:
       - checkout
       - run: npm install mock-user-auth
