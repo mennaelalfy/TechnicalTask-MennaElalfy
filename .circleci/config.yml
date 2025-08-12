@@ -75,7 +75,7 @@ jobs:
       - run: npm install nodemon --save-dev
       - run: npm install --save-dev mocha
       - run: npm install --save-dev mochawesome
-       - run:
+      - run:
           name: Start Mock-User-Auth server
           background: true
           command: |
