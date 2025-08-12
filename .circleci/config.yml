@@ -87,8 +87,7 @@ jobs:
             sleep 10
             sudo chmod +x node_modules/.bin/mocha
             npx mocha API-tests/UserAPIs.test.js --endpoint http://localhost:3000  
-
-     - store_artifacts:    
+      - store_artifacts:    
           path: tests_output            
 
 workflows:
