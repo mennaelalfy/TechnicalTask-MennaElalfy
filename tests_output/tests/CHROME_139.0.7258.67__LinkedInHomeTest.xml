@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites errors="0"
+            failures="0"
+            tests="1">
+
+  <testsuite name="tests.LinkedInHomeTest" id="tests.LinkedInHomeTest"
+    errors="0" failures="0" hostname="" package="LinkedInHomeTest" skipped="0"
+    tests="1" time="43.08" timestamp="">
+  
+    <testcase name="LinkedIn validation" classname="tests.LinkedInHomeTest" time="43.07" assertions="8">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    </testcase>
+  
+
+  
+
+    
+
+  
+  </testsuite>
+</testsuites>

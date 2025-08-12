@@ -34,7 +34,8 @@ module.exports={
 	
 	//Enter email and password
 	const path = require('path');
-	const credentials = require(path.join(process.env.Nightwatch, 'testdata', 'SignupData.json'));
+	//const credentials = require(path.join(process.env.Nightwatch, 'testdata', 'SignupData.json'));
+	const credentials = require(path.join(__dirname, '../testdata/SignupData.json'));
 	
     // get credentials from file
 	const email = credentials.Email;
