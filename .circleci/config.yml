@@ -81,7 +81,7 @@ jobs:
           command: |
             npm run dev
       - run:
-          name: Debug: List files at root and inside mock-user-auth
+          name: "Debug: List files at root and inside mock-user-auth"
           command: |
             echo "Current directory: $(pwd)"
             ls -la
