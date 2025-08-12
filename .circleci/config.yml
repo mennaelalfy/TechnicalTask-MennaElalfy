@@ -89,8 +89,8 @@ jobs:
             ls -la mock-user-auth/test
             
       - run:
-        name: Find all test files
-        command: find . -name 'UserAPIs.test.js' -o -name '*.test.js'
+         name: Find all test files
+         command: find . -name 'UserAPIs.test.js' -o -name '*.test.js'
 
       - run:
           name: Execute API tests
