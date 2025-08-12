@@ -86,7 +86,7 @@ jobs:
           command: |
             sleep 10
             sudo chmod +x node_modules/.bin/mocha
-            npx mocha test/UserAPIs.test.js --endpoint http://localhost:3000
+            npx mocha mocha mock-user-auth/test/UserAPIs.test.js --endpoint http://localhost:3000           
 
 workflows:
   version: 2
