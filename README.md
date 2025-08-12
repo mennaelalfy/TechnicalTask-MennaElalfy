@@ -1,7 +1,7 @@
 # TechnicalTask-MennaElalfy
 ## UI TESTS
 ### Prerequisites
-- Install NightwatchJS https://nightwatchjs.org/ 
+- Install NightwatchJS https://nightwatchjs.org/ in repository's root directory as shown in `step3`
 ### Steps
 1. Clone the repository.  
 2. Open the Command Line from repository's root directory. 
@@ -28,5 +28,8 @@
 6. Run **UserAPIs.test** and generate HTML report for the test results using mochawesome by running the command: 
 `npx mocha API-tests\UserAPIs.test.js --reporter mochawesome` 
 7. HTML report having the test cases results will be generated in the following directory: `mochawesome-report\mochawesome.html`
+8. Previous generated report from previous run is in the following directory: `DOCUMENTATION\Deliverables-HTML-WebReports\APIs-HTMLreport` 
 ### Running Pipline using CircleCI 
 [![CircleCI](https://dl.circleci.com/status-badge/img/gh/mennaelalfy/TechnicalTask-MennaElalfy/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/mennaelalfy/TechnicalTask-MennaElalfy/tree/main)
+### Documentation
+Test cases documentation, bugs report and suggestions to improve usability and performance for all questions are present in the following directory: `DOCUMENTATION\TestCases&BugsReports`
