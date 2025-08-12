@@ -1,8 +1,8 @@
 # TechnicalTask-MennaElalfy
 ## UI TESTS
 ### Prerequisites
-Install NightwatchJS https://nightwatchjs.org/ 
-
+-Install NightwatchJS https://nightwatchjs.org/ 
+### Steps
 1. Clone the repository.  
 2. Open the Command Line from repository's root directory. 
 3. Run the following command to initialize NightwatchJS: `npm init nightwatch`  
@@ -17,13 +17,13 @@ Install NightwatchJS https://nightwatchjs.org/
 
 ## API TESTS
 ### Prerequisites
-Install Mock-User-Auth using https://www.npmjs.com/package/mock-user-auth/
-Install Supertest using https://www.npmjs.com/package/supertest/
-Install Mocha test runner
- - Open command line from repository's root directory and Run the command `npm install --save-dev mocha` 
-Install mochawesome
-  -Open command line from repository's root directory and Run the command `npm install --save-dev mochawesome` 
-
+-Install Mock-User-Auth using https://www.npmjs.com/package/mock-user-auth/
+-Install Supertest using https://www.npmjs.com/package/supertest/
+-Install Mocha test runner
+Open command line from repository's root directory and Run the command `npm install --save-dev mocha` 
+-Install mochawesome
+ Open command line from repository's root directory and Run the command `npm install --save-dev mochawesome` 
+### Steps
 1. Clone the repository.  
 2. Open the Command Line from repository's root directory
 4. Start the server by the following command and do not close the cmd: `npm run dev` 
