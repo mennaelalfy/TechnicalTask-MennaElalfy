@@ -1,8 +1,3 @@
-// Must create enviroment varibale for Nightwatch, variable = Nightwatch and Value= Path where Nightwatch installed 
-// if env variable did not work try to set it 1st in cmd by 
-//set Nightwatch=C:\Automation
-//npx nightwatch tests/LinkedInHomeTest.js
-
 
 module.exports={
 	
@@ -22,30 +17,24 @@ module.exports={
 	home.expect.element('@logo').to.be.visible;
 	home.expect.element('@JoinButton').to.be.visible;
 	
-	
 	//Click Join Now and assert on url redirected to the registeration form
 	home.waitForElementVisible('@JoinButton', 3000).click('@JoinButton');
 	browser.assert.urlEquals(linkedInForm.url);
 	
-	//Enter email and password
+	//Construct path for JSON containing credentials
 	const path = require('path');
-	//const credentials = require(path.join(process.env.Nightwatch, 'testdata', 'SignupData.json'));
 	const credentials = require(path.join(__dirname, '../testdata/SignupData.json'));
 	
     // get credentials from file
 	const email = credentials.Email;
 	const password = credentials.Password;
 
-
 	// Enter email and password
 	linkedInForm.click('@emailField').setValue('@emailField', email);
 	linkedInForm.click('@passwordField').setValue('@passwordField', password);
-	
-	
-	
+		
 	//Click Agree and Join
 	linkedInForm.click('@AgreeAndJoinButton');
-	//browser.assert.urlEquals(linkedInNameForm.url);
 	
 	//Enter first name and last name
 	const firstName=credentials.FirstName;

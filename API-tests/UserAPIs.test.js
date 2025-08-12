@@ -1,9 +1,7 @@
 const request = require('supertest');
-const { expect } = require('chai');
 const assert = require('assert');
- 
 const baseURL = 'http://localhost:3000';
- 
+
 let savedToken; 
 const invalidToken = 'invalidtoken123';
 
@@ -20,10 +18,11 @@ const invalidToken = 'invalidtoken123';
         email: 'el_alfy_me@gmail.com',
         password: 'user123'
       });
-  
-    assert.ok(response.body.token, 'Token does not exist in the response');
+     
 	assert.strictEqual(response.status, 200, `Expected: 200, Actual: ${response.status}`);
 	assert.strictEqual(response.body.message, 'User registered with success', `Expected: User registered with success, Actual: ${response.body}`);
+	assert.ok(response.body.token, 'Token does not exist in the response');
+
   });
  
   //invalid body
@@ -38,6 +37,7 @@ const invalidToken = 'invalidtoken123';
  
 	assert.strictEqual(response.status, 401, `Expected: 401, Actual: ${response.status}`);
 	assert.strictEqual(response.body.messge, 'Invalid body', `Expected: Invalid body, Actual: ${response.body.message}`);
+
   });
   
 });
@@ -157,10 +157,8 @@ describe('PATCH USER BY TOKEN', function () {
       });
  
     assert.strictEqual(response.status, 401, `Expected status 401, Actual ${response.status}`);
-    assert.strictEqual(response.body.message, 'Invalid body', `Expected: Invalid body, Actual: ${response.body.message}`);
-	
-    });
-	
+    assert.strictEqual(response.body.message, 'Invalid body', `Expected: Invalid body, Actual: ${response.body.message}`);	
+    });	
  
   // invalid token - valid body
   it('should fail to update user - invalid token - valid body', async function () {

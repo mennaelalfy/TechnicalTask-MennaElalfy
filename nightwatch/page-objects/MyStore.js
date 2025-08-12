@@ -1,4 +1,5 @@
 
+//This page object represent the store page
 
 module.exports = {
   
