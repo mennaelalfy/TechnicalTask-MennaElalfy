@@ -81,6 +81,7 @@ workflows:
   run-tests:
     jobs:
       - UI-Test-homepage
-      - UI-Test-LinkedInHome
       - UI-Test-StoreSearch
+      - UI-Test-LinkedInHome
+      
       

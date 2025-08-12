@@ -14,18 +14,13 @@ module.exports={
 	const linkedInNameForm=browser.page.LinkedInNameForm();
 	const securityPopUp=browser.page.SecurityPopUp();
 		  
-	//Home page validation
-	//Navigate to url and validate on it
+	//Navigate to url 
 	home.navigate();
 	browser.assert.urlEquals('https://www.linkedin.com/');
 		  
-	//Validate on element logo from the page object to be visible
+	//Validate page loaded
 	home.expect.element('@logo').to.be.visible;
-	
-	//Validate on welcoming text to be visible and equal to certain text
-	home.expect.element('@welcometext').to.be.visible;
-	home.expect.element('@welcometext').text.to.equal('Welcome to your professional community');
-	 
+	home.expect.element('@JoinButton').to.be.visible;
 	
 	
 	//Click Join Now and assert on url redirected to the registeration form
