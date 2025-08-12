@@ -88,8 +88,8 @@ jobs:
             sudo chmod +x node_modules/.bin/mocha
             npx mocha API-tests/UserAPIs.test.js --endpoint http://localhost:3000  
 
-     - store_artifacts:
-         path: tests_output            
+     - store_artifacts:    
+          path: tests_output            
 
 workflows:
   version: 2
