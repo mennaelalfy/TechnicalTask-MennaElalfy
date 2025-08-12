@@ -5,8 +5,7 @@
 ### Steps
 1. Clone the repository.  
 2. Open the Command Line from repository's root directory. 
-3. Run the following command to initialize NightwatchJS: `npm init nightwatch`  
-4. To complete setting up options showed in cmd, follow guidance in https://nightwatchjs.org/  
+3. Run the following command to initialize NightwatchJS: `npm init nightwatch` and follow guidance in https://nightwatchjs.org/ 
 5. Run **homepageTest** by running the command: `npx nightwatch UI-tests/homepageTest.js`  
 6. HTML report having the test cases results will be generated in the following directory: `tests_output\nightwatch-html-report`  
 7. Run **LinkedInHomeTest** by running the command: `npx nightwatch UI-tests/LinkedInHomeTest.js`  
@@ -28,4 +27,6 @@
 5. keep the previously opened cmd and open another one from repository's root directory.
 6. Run **UserAPIs.test** and generate HTML report for the test results using mochawesome by running the command: 
 `npx mocha API-tests\UserAPIs.test.js --reporter mochawesome` 
-7. HTML report having the test cases results will be generated in the following directory: `mochawesome-report\mochawesome.html`  
+7. HTML report having the test cases results will be generated in the following directory: `mochawesome-report\mochawesome.html`
+### Running Pipline using CircleCI 
+[![CircleCI](https://dl.circleci.com/status-badge/img/gh/mennaelalfy/TechnicalTask-MennaElalfy/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/mennaelalfy/TechnicalTask-MennaElalfy/tree/main)
