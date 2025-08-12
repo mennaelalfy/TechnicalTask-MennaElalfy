@@ -65,23 +65,34 @@ jobs:
       - store_artifacts:
           path: tests_output          
 
-
-
-
-  api-tests:
+  API-Tests:
     docker:
       - image: cimg/node:v22.18.0
     steps:
       - checkout
-      - run: npm install
-      - run: npx mocha mock-user-auth/test/UserAPIs.test.js --reporter mochawesome
+      - run: npm install mock-user-auth
+      - run: npm install supertest --save-dev
+      - run: npm install nodemon --save-dev
+      - run: npm install --save-dev mocha
+      - run: npm install --save-dev mochawesome
+       - run:
+          name: Start Mock-User-Auth server
+          background: true
+          command: |
+            npm run dev
+
+      - run:
+          name: Execute API tests
+          command: |
+            sleep 10
+            sudo chmod +x node_modules/.bin/mocha
+            npx mocha UserAPIs.test.js --endpoint http://localhost:3000
 
 workflows:
   version: 2
   run-tests:
     jobs:
-      - UI-Test-homepage
-      - UI-Test-StoreSearch
-      - UI-Test-LinkedInHome
+      
+      - API-Tests
       
       
